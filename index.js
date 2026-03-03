@@ -35,7 +35,6 @@ window.addEventListener('load', function() {
             initializeFloatNav(scrollContainer || pageWrapper);
             initializeSmoothScroll(scrollContainer || pageWrapper);
             initializeResume();
-            initializeMixItUp();
             initializeDarkTheme(); // ✅ Add dark theme
             
         }, 300);
@@ -142,37 +141,32 @@ function initializeResume() {
     const right = document.querySelector('.right');
     
     const expContent = `<h4>Experience</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Practical experience and leadership roles.</p>
                     <ul>
-                        <li><h6>2018 - 2019</h6><h5>Intern</h5><p>MTC</p></li>
-                        <li><h6>2019 - 2020</h6><h5>Junior Developer</h5><p>Tech Company</p></li>
-                        <li><h6>2020 - 2021</h6><h5>Developer</h5><p>Startup Inc</p></li>
-                        <li><h6>2021 - Present</h6><h5>CS Student</h5><p>USTHB</p></li>
+                        <li><h6>2024</h6><h5>NAOI Competition Monitor</h5><p>National C++ Programming Competition (NAOI) - Supervised participants, detected prohibited libraries and ensured programming standards compliance. Developed attention to detail and understanding of best practices.</p></li>
+                        <li><h6>Previous</h6><h5>Mobile Repair Training</h5><p>Technical training that reinforced problem-solving methodologies. Skills now applied to software debugging and optimization.</p></li>
                     </ul>`;
     
     const eduContent = `<h4>Education</h4>
-                    <p>My academic journey.</p>
+                    <p>Academic background and qualifications.</p>
                     <ul>
-                        <li><h6>2021 - Present</h6><h5>Computer Science</h5><p>USTHB University</p></li>
-                        <li><h6>2018 - 2021</h6><h5>High School Diploma</h5><p>Science Track</p></li>
+                        <li><h6>2021 - Present</h6><h5>Computer Science</h5><p>Université des Sciences et de la Technologie Houari Boumediene (USTHB), Algiers, Algeria. Focusing on software development and system architecture.</p></li>
                     </ul>`;
     
-    const skillsContent = `<h4>Skills</h4>
-                    <p>Technologies I'm proficient with.</p>
+    const skillsContent = `<h4>Technical Skills</h4>
+                    <p>Technologies and tools I work with.</p>
                     <ul>
-                        <li><h5>HTML & CSS</h5></li>
-                        <li><h5>JavaScript</h5></li>
-                        <li><h5>Git & GitHub</h5></li>
-                        <li><h5>Problem Solving</h5></li>
+                        <li><h5>Languages</h5><p>C, C++, Java, Python, JavaScript, HTML/CSS</p></li>
+                        <li><h5>Frameworks</h5><p>React.js, Express.js, Node.js</p></li>
+                        <li><h5>Databases</h5><p>MySQL, MongoDB</p></li>
+                        <li><h5>Tools</h5><p>VS Code, Git, GitHub, Office Suite</p></li>
                     </ul>`;
     
     const aboutContent = `<h4>About Me</h4>
-                    <p>Get to know me better!</p>
+                    <p>More about who I am.</p>
                     <ul>
-                        <li><h5>CS Student at USTHB</h5></li>
-                        <li><h5>Passionate about coding</h5></li>
-                        <li><h5>Love building projects</h5></li>
-                        <li><h5>Always learning</h5></li>
+                        <li><h5>Passion</h5><p>Passionate about coding since childhood, enjoy helping colleagues with programming and sharing knowledge</p></li>
+                        <li><h5>Interests</h5><p>Full-stack development, Python tools, and open source contributions</p></li>
                     </ul>`;
     
     const left = document.querySelectorAll('.left button');
@@ -205,33 +199,10 @@ function initializeResume() {
     }
 }
 
-// MixItUp functionality
-function initializeMixItUp() {
-    const containerEl = document.querySelector('.projects_container');
-    
-    if (containerEl && typeof mixitup !== 'undefined') {
-        let mixer = mixitup(containerEl, {
-            animation: {
-                enable: true,
-                duration: 400
-            },
-            selectors: {
-                target: '.projects'
-            },
-            load: {
-                filter: 'all'
-            }
-        });
-    
-        const filterButtons = document.querySelectorAll('.project_cat .btn');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                const filterValue = this.getAttribute('data-filter');
-                mixer.filter(filterValue);
-            });
-        });
-    }
-}
+// MixItUp functionality - Disabled
+// function initializeMixItUp() {
+//     const containerEl = document.querySelector('.projects_container');
+//     if (containerEl && typeof mixitup !== 'undefined') {
+//         let mixer = mixitup(containerEl);
+//     }
+// }
